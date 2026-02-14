@@ -1,6 +1,7 @@
 package net.arata.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.arata.tutorialmod.blocks.ModBlocks;
 import net.arata.tutorialmod.item.ModCreativeModTabs;
 import net.arata.tutorialmod.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
@@ -60,6 +61,7 @@ public class TutorialMod
 
         // Le dice al bus de eventos del mod que registre los items en el juego
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
