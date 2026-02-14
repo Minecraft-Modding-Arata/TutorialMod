@@ -1,6 +1,7 @@
 package net.arata.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.arata.tutorialmod.item.ModCreativeModTabs;
 import net.arata.tutorialmod.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -53,6 +54,9 @@ public class TutorialMod
     public TutorialMod(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
+
+        // Registramos las nuevas Tabs del modo Creativo
+        ModCreativeModTabs.register(modEventBus);
 
         // Le dice al bus de eventos del mod que registre los items en el juego
         ModItems.register(modEventBus);
