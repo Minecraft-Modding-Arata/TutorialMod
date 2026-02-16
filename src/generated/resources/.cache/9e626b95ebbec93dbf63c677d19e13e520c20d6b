@@ -1,0 +1,7 @@
+// 1.20.1	2026-02-16T19:44:47.2675035	Tags for minecraft:block mod id tutorialmod
+f7d4d746a89ba9704d89651d20d3b89098acdabd data/forge/tags/blocks/needs_netherite_tool.json
+2c39ba5cecb79889f7925f62f972246a014552c8 data/minecraft/tags/blocks/mineable/pickaxe.json
+1855e5a8303c4c35a75ed22b8c51c95788ba39ba data/minecraft/tags/blocks/needs_diamond_tool.json
+d0d37b9bb92cbcec36ce2624325e9de53530d187 data/minecraft/tags/blocks/needs_iron_tool.json
+0162b71b6d6a0ea17ee5922fc8cbbf46c15346df data/minecraft/tags/blocks/needs_stone_tool.json
+031ec7111c8b7c57f798acd0b3605ceb1912498b data/tutorialmod/tags/blocks/metal_detector_valuables.json
