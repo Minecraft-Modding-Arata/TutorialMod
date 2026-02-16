@@ -18,5 +18,8 @@
 
   "block.tutorialmod.sound_block": "Sound Block",
 
+  "tooltip.tutorialmod.metal_detector": "Finds valuables ores underground",
+  "tooltip.tutorialmod.sound_block": "Makes didgeridoo sounds when right-clicked!",
+
   "creativetab.tutorial_tab": "Tutorial Tab"
 }
