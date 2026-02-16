@@ -1,7 +1,7 @@
 package net.arata.tutorialmod;
 
 import com.mojang.logging.LogUtils;
-import net.arata.tutorialmod.blocks.ModBlocks;
+import net.arata.tutorialmod.block.ModBlocks;
 import net.arata.tutorialmod.item.ModCreativeModTabs;
 import net.arata.tutorialmod.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;

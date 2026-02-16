@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 public class MetalDetectorItem extends Item {
+
     public MetalDetectorItem(Properties properties) {
         super(properties);
     }

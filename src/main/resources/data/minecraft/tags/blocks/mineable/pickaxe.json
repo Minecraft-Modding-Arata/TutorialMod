@@ -5,6 +5,7 @@
     "tutorialmod:sapphire_ore",
     "tutorialmod:deepslate_sapphire_ore",
     "tutorialmod:nether_sapphire_ore",
-    "tutorialmod:end_stone_sapphire_ore"
+    "tutorialmod:end_stone_sapphire_ore",
+    "tutorialmod:sound_block"
   ]
 }
