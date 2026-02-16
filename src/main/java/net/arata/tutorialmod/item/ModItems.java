@@ -1,6 +1,7 @@
 package net.arata.tutorialmod.item;
 
 import net.arata.tutorialmod.TutorialMod;
+import net.arata.tutorialmod.item.custom.FuelItem;
 import net.arata.tutorialmod.item.custom.MetalDetectorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,6 +23,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
             () -> new Item(new Item.Properties().food(ModFoods.STRAWBERRY)));
+
+    public static final RegistryObject<Item> PINE_CONE = ITEMS.register("pine_cone",
+            () -> new FuelItem(new Item.Properties(), 400)); // 400 ticks (= 20 secs) (1 item son 200 ticks en Horno)
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
