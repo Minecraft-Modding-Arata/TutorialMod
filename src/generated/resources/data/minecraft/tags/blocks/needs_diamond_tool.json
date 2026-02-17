@@ -1,6 +1,15 @@
 {
   "values": [
     "tutorialmod:sapphire_block",
-    "tutorialmod:nether_sapphire_ore"
+    "tutorialmod:nether_sapphire_ore",
+    "tutorialmod:sapphire_stairs",
+    "tutorialmod:sapphire_slab",
+    "tutorialmod:sapphire_button",
+    "tutorialmod:sapphire_pressure_plate",
+    "tutorialmod:sapphire_fence",
+    "tutorialmod:sapphire_fence_gate",
+    "tutorialmod:sapphire_wall",
+    "tutorialmod:sapphire_door",
+    "tutorialmod:sapphire_trapdoor"
   ]
 }
