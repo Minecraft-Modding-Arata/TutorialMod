@@ -24,9 +24,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
                 .add(ModBlocks.SAPPHIRE_ORE.get()).addTag(Tags.Blocks.ORES);
 
-        this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
-                .add(ModBlocks.END_STONE_SAPPHIRE_ORE.get());
-
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.SAPPHIRE_BLOCK.get(), ModBlocks.RAW_SAPPHIRE_BLOCK.get(), ModBlocks.SAPPHIRE_ORE.get(),
                         ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), ModBlocks.NETHER_SAPPHIRE_ORE.get(),
@@ -38,8 +35,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         ModBlocks.SAPPHIRE_TRAPDOOR.get()
                 );
 
-        this.tag(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.SAPPHIRE_ORE.get(), ModBlocks.SOUND_BLOCK.get());
+        this.tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.SAPPHIRE_ORE.get());
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.RAW_SAPPHIRE_BLOCK.get(), ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
@@ -52,6 +48,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         ModBlocks.SAPPHIRE_WALL.get(), ModBlocks.SAPPHIRE_DOOR.get(),
                         ModBlocks.SAPPHIRE_TRAPDOOR.get()
                 );
+
+        this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
+                .add(ModBlocks.END_STONE_SAPPHIRE_ORE.get());
+
+        this.tag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL).add(ModBlocks.SOUND_BLOCK.get());
 
         // Esto es para que se conecten entre ellas
         this.tag(BlockTags.FENCES).add(ModBlocks.SAPPHIRE_FENCE.get());
