@@ -1,6 +1,7 @@
 package net.arata.tutorialmod.item;
 
 import net.arata.tutorialmod.TutorialMod;
+import net.arata.tutorialmod.block.ModBlocks;
 import net.arata.tutorialmod.item.custom.FuelItem;
 import net.arata.tutorialmod.item.custom.MetalDetectorItem;
 import net.arata.tutorialmod.item.custom.ModArmorItem;
@@ -27,6 +28,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> PINE_CONE = ITEMS.register("pine_cone",
             () -> new FuelItem(new Item.Properties(), 400)); // 400 ticks (= 20 secs) (1 item son 200 ticks en Horno)
+
+    // Usamos ItemNameBlockItem en vez de Item porque es más práctico a la hora de traducirlo, al ser una representación del bloque STRAWBERRY_CROP
+    public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff",
             () -> new Item(new Item.Properties().stacksTo(1)));
