@@ -44,6 +44,8 @@
   "block.tutorialmod.sapphire_door": "Sapphire Door",
   "block.tutorialmod.sapphire_trapdoor": "Sapphire Trapdoor",
 
+  "block.tutorialmod.catmint": "Catmint",
+
   "tooltip.tutorialmod.metal_detector": "Finds valuables ores underground",
   "tooltip.tutorialmod.sound_block": "Makes didgeridoo sounds when right-clicked!",
 

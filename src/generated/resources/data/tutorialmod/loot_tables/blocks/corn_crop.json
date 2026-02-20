@@ -16,23 +16,11 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "minecraft:any_of",
-                  "terms": [
-                    {
-                      "block": "tutorialmod:corn_crop",
-                      "condition": "minecraft:block_state_property",
-                      "properties": {
-                        "age": "7"
-                      }
-                    },
-                    {
-                      "block": "tutorialmod:corn_crop",
-                      "condition": "minecraft:block_state_property",
-                      "properties": {
-                        "age": "8"
-                      }
-                    }
-                  ]
+                  "block": "tutorialmod:corn_crop",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "8"
+                  }
                 }
               ],
               "name": "tutorialmod:corn"
@@ -50,23 +38,11 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "condition": "minecraft:any_of",
-          "terms": [
-            {
-              "block": "tutorialmod:corn_crop",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "age": "7"
-              }
-            },
-            {
-              "block": "tutorialmod:corn_crop",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "age": "8"
-              }
-            }
-          ]
+          "block": "tutorialmod:corn_crop",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "8"
+          }
         }
       ],
       "entries": [

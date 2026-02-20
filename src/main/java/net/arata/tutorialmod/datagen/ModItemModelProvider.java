@@ -76,6 +76,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(ModBlocks.SAPPHIRE_FENCE_GATE);
 
         trapdoorItem(ModBlocks.SAPPHIRE_TRAPDOOR);
+
+        simpleBlockItemFromBlockTexture(ModBlocks.CATMINT);
     }
 
     // Shoutout to El_Redstoniano for making this
@@ -171,5 +173,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleBlockItemFromBlockTexture(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID,"block/" + item.getId().getPath()));
     }
 }

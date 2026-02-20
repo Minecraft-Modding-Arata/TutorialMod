@@ -50,9 +50,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.SAPPHIRE_TRAPDOOR.get(), modLoc("block/sapphire_trapdoor"),
                 true, "cutout");
 
-        // No es lo ideal llamar directamente a un atributo pero puesto que es public es la forma más sencilla de hacerlo que he encontrado
+        // No es lo ideal llamar directamente a un atributo, pero puesto que es public es la forma más sencilla de hacerlo que he encontrado
         makeCrop(ModBlocks.STRAWBERRY_CROP.get(), StrawberryCropBlock.AGE, "strawberry_stage_");
         makeCrop(ModBlocks.CORN_CROP.get(), CornCropBlock.AGE, "corn_stage_");
+
+        simpleBlock(ModBlocks.CATMINT.get(), models().cross(blockTexture(ModBlocks.CATMINT.get()).getPath(),
+                blockTexture(ModBlocks.CATMINT.get())).renderType("cutout"));
+        simpleBlockWithItem(ModBlocks.POTTED_CATMINT.get(), models().singleTexture("potted_catmint",
+                ResourceLocation.parse("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.CATMINT.get())).renderType("cutout"));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

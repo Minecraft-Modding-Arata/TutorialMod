@@ -5,6 +5,8 @@ import net.arata.tutorialmod.block.ModBlocks;
 import net.arata.tutorialmod.item.ModCreativeModTabs;
 import net.arata.tutorialmod.item.ModItems;
 import net.arata.tutorialmod.loot.ModLootModifier;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -90,6 +92,9 @@ public class TutorialMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(()-> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(), ModBlocks.POTTED_CATMINT);
+        });
         /*
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
