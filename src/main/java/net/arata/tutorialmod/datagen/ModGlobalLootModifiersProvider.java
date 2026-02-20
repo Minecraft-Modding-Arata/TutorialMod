@@ -4,6 +4,7 @@ import com.mojang.patchy.BlockedServers;
 import net.arata.tutorialmod.TutorialMod;
 import net.arata.tutorialmod.item.ModItems;
 import net.arata.tutorialmod.loot.AddItemModifier;
+import net.arata.tutorialmod.loot.AddSusSandItemModifier;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
@@ -30,6 +31,10 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
         }, ModItems.PINE_CONE.get()));
         add("metal_detector_from_jungle_temples", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(ResourceLocation.parse("chests/jungle_temple")).build()
+        }, ModItems.METAL_DETECTOR.get()));
+
+        add("metal_detector_from_suspicious_sand", new AddSusSandItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(ResourceLocation.parse("archaeology/desert_pyramid")).build()
         }, ModItems.METAL_DETECTOR.get()));
     }
 }
