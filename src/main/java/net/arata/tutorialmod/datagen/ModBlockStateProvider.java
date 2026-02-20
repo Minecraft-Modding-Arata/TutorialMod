@@ -2,11 +2,13 @@ package net.arata.tutorialmod.datagen;
 
 import net.arata.tutorialmod.TutorialMod;
 import net.arata.tutorialmod.block.ModBlocks;
+import net.arata.tutorialmod.block.custom.CornCropBlock;
 import net.arata.tutorialmod.block.custom.StrawberryCropBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -48,25 +50,32 @@ public class ModBlockStateProvider extends BlockStateProvider {
         trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.SAPPHIRE_TRAPDOOR.get(), modLoc("block/sapphire_trapdoor"),
                 true, "cutout");
 
-        makeStrawberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
+        // No es lo ideal llamar directamente a un atributo pero puesto que es public es la forma más sencilla de hacerlo que he encontrado
+        makeCrop(ModBlocks.STRAWBERRY_CROP.get(), StrawberryCropBlock.AGE, "strawberry_stage_");
+        makeCrop(ModBlocks.CORN_CROP.get(), CornCropBlock.AGE, "corn_stage_");
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 
-    public void makeStrawberryCrop(CropBlock block, String modelName, String textureName) {
-        Function<BlockState, ConfiguredModel[]> function = state -> strawberryStates(state, block, modelName, textureName);
+    public void makeCrop(CropBlock block, IntegerProperty ageProperty, String modelName) {
 
-        getVariantBuilder(block).forAllStates(function);
-    }
+        getVariantBuilder(block).forAllStates(state -> {
 
-    private ConfiguredModel[] strawberryStates(BlockState state, CropBlock block, String modelName, String textureName) {
-        ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((StrawberryCropBlock) block).getAgeProperty()),
-                ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID, "block/" + textureName +
-                        state.getValue(((StrawberryCropBlock) block).getAgeProperty()))).renderType("cutout"));
+            int age = state.getValue(ageProperty);
 
-        return models;
+            return new ConfiguredModel[]{
+                    new ConfiguredModel(
+                            models().crop(
+                                    modelName + age,
+                                    ResourceLocation.fromNamespaceAndPath(
+                                            TutorialMod.MOD_ID,
+                                            "block/" + modelName + age // Aquí el modelName se utiliza para la textura, ya que son iguales
+                                    )
+                            ).renderType("cutout")
+                    )
+            };
+        });
     }
 }

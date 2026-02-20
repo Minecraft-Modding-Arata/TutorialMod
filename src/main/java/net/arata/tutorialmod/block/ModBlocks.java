@@ -1,6 +1,7 @@
 package net.arata.tutorialmod.block;
 
 import net.arata.tutorialmod.TutorialMod;
+import net.arata.tutorialmod.block.custom.CornCropBlock;
 import net.arata.tutorialmod.block.custom.SoundBlock;
 import net.arata.tutorialmod.block.custom.StrawberryCropBlock;
 import net.arata.tutorialmod.item.ModItems;
@@ -72,8 +73,10 @@ public class ModBlocks {
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST).noOcclusion(),  BlockSetType.IRON));
 
     // Utilizamos el BLOCKS.register directamente porque no queremos un item de este bloque, sino de las semillas
-    public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
+    public static final RegistryObject<StrawberryCropBlock> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
             () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+    public static final RegistryObject<CornCropBlock> CORN_CROP = BLOCKS.register("corn_crop",
+            () -> new CornCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 
     // Registra el bloque en el juego junto a su item
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
