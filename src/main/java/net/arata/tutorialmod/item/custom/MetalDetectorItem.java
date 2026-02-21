@@ -1,9 +1,11 @@
 package net.arata.tutorialmod.item.custom;
 
+import net.arata.tutorialmod.sound.ModSounds;
 import net.arata.tutorialmod.util.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -43,6 +45,8 @@ public class MetalDetectorItem extends Item {
                 if (isValuableBlock(state)) {
                     outputValuableCoordinates(positionClicked.below(i), player, state.getBlock());
                     foundBlock = true;
+                    pContext.getLevel().playSound(null, positionClicked, ModSounds.METAL_DETECTOR_FOUND_ORE.get(),
+                            SoundSource.BLOCKS, 1.0F, 1.0F);
                     break;
                 }
             }
