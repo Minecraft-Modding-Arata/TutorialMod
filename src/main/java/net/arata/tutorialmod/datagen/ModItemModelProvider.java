@@ -53,6 +53,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CORN_SEEDS);
         simpleItem(ModItems.PINE_CONE);
 
+        simpleItem(ModItems.BAR_BRAWL_MUSIC_DISC);
+
         handheldItem(ModItems.SAPPHIRE_SWORD);
         handheldItem(ModItems.SAPPHIRE_PICKAXE);
         handheldItem(ModItems.SAPPHIRE_AXE);
