@@ -5,6 +5,7 @@ import net.arata.tutorialmod.block.ModBlocks;
 import net.arata.tutorialmod.item.ModCreativeModTabs;
 import net.arata.tutorialmod.item.ModItems;
 import net.arata.tutorialmod.loot.ModLootModifier;
+import net.arata.tutorialmod.villager.ModVillagers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
@@ -67,6 +68,8 @@ public class TutorialMod
         ModBlocks.register(modEventBus);
 
         ModLootModifier.register(modEventBus);
+
+        ModVillagers.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
