@@ -80,6 +80,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trapdoorItem(ModBlocks.SAPPHIRE_TRAPDOOR);
 
         simpleBlockItemFromBlockTexture(ModBlocks.CATMINT);
+
+        withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     // Shoutout to El_Redstoniano for making this
