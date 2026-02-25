@@ -1,6 +1,5 @@
 package net.arata.tutorialmod.datagen;
 
-import com.mojang.patchy.BlockedServers;
 import net.arata.tutorialmod.TutorialMod;
 import net.arata.tutorialmod.item.ModItems;
 import net.arata.tutorialmod.loot.AddItemModifier;

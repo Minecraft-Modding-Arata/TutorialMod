@@ -2,6 +2,7 @@ package net.arata.tutorialmod.block;
 
 import net.arata.tutorialmod.TutorialMod;
 import net.arata.tutorialmod.block.custom.CornCropBlock;
+import net.arata.tutorialmod.block.custom.GemPolishingStationBlock;
 import net.arata.tutorialmod.block.custom.SoundBlock;
 import net.arata.tutorialmod.block.custom.StrawberryCropBlock;
 import net.arata.tutorialmod.item.ModItems;
@@ -87,6 +88,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
             () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ModBlocks.CATMINT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+
+    public static final RegistryObject<Block> GEM_POLISHING_STATION = registerBlock("gem_polishing_station",
+            () -> new GemPolishingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     // Registra el bloque en el juego junto a su item
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

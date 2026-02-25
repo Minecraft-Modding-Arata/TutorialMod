@@ -2,13 +2,18 @@ package net.arata.tutorialmod;
 
 import com.mojang.logging.LogUtils;
 import net.arata.tutorialmod.block.ModBlocks;
+import net.arata.tutorialmod.block.entity.ModBlockEntities;
 import net.arata.tutorialmod.entity.ModEntities;
 import net.arata.tutorialmod.entity.client.RhinoRenderer;
 import net.arata.tutorialmod.item.ModCreativeModTabs;
 import net.arata.tutorialmod.item.ModItems;
 import net.arata.tutorialmod.loot.ModLootModifier;
+import net.arata.tutorialmod.menu.GemPolishingStationScreen;
+import net.arata.tutorialmod.menu.ModMenuTypes;
+import net.arata.tutorialmod.recipe.ModRecipes;
 import net.arata.tutorialmod.sound.ModSounds;
 import net.arata.tutorialmod.villager.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -79,6 +84,10 @@ public class TutorialMod
 
         ModEntities.register(modEventBus);
 
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -147,6 +156,8 @@ public class TutorialMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
+
+            MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
             // Some client setup code
             //LOGGER.info("HELLO FROM CLIENT SETUP");
             //LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
