@@ -1,19 +1,20 @@
 package net.arata.tutorialmod.block;
 
 import net.arata.tutorialmod.TutorialMod;
-import net.arata.tutorialmod.block.custom.CornCropBlock;
-import net.arata.tutorialmod.block.custom.GemPolishingStationBlock;
-import net.arata.tutorialmod.block.custom.SoundBlock;
-import net.arata.tutorialmod.block.custom.StrawberryCropBlock;
+import net.arata.tutorialmod.block.custom.*;
 import net.arata.tutorialmod.item.ModItems;
 import net.arata.tutorialmod.sound.ModSounds;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -91,6 +92,20 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> GEM_POLISHING_STATION = registerBlock("gem_polishing_station",
             () -> new GemPolishingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+
+    public static final RegistryObject<Block> PINE_LOG = registerBlock("pine_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(3.0F)));
+    public static final RegistryObject<Block> PINE_WOOD = registerBlock("pine_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(3.0F)));
+    public static final RegistryObject<Block> STRIPPED_PINE_LOG = registerBlock("stripped_pine_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(3.0F)));
+    public static final RegistryObject<Block> STRIPPED_PINE_WOOD = registerBlock("stripped_pine_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(3.0F)));
+
+    public static final RegistryObject<Block> PINE_PLANKS = registerBlock("pine_planks",
+            () -> new ModFlammablePlanksBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(3.0F)));
+    public static final RegistryObject<Block> PINE_LEAVES = registerBlock("pine_leaves",
+            () -> new ModFlammableLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).strength(3.0F)));
 
     // Registra el bloque en el juego junto a su item
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

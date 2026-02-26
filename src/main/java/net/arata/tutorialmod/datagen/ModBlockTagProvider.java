@@ -59,5 +59,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.FENCE_GATES).add(ModBlocks.SAPPHIRE_FENCE_GATE.get());
         this.tag(BlockTags.WALLS).add(ModBlocks.SAPPHIRE_WALL.get());
 
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.PINE_LOG.get(), ModBlocks.STRIPPED_PINE_LOG.get(),
+                        ModBlocks.PINE_WOOD.get(), ModBlocks.STRIPPED_PINE_WOOD.get());
+        this.tag(BlockTags.PLANKS).add(ModBlocks.PINE_PLANKS.get());
     }
 }

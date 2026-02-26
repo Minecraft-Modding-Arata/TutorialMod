@@ -63,7 +63,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.STRAWBERRY_CROP.get(), createCropDrops(ModBlocks.STRAWBERRY_CROP.get(), ModItems.STRAWBERRY.get(),
                 ModItems.STRAWBERRY_SEEDS.get(), lootitemcondition$builder));
 
-        /*
+        /* Este hace que la parte de abajo también dropee el maíz
         LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 7))
@@ -83,6 +83,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.POTTED_CATMINT.get(), createPotFlowerItemTable(ModBlocks.CATMINT.get()));
 
         this.dropSelf(ModBlocks.GEM_POLISHING_STATION.get());
+
+        this.dropSelf(ModBlocks.PINE_LOG.get());
+        this.dropSelf(ModBlocks.PINE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_PINE_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_PINE_WOOD.get());
+        this.dropSelf(ModBlocks.PINE_PLANKS.get());
+        this.add(ModBlocks.PINE_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.PINE_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES)); //TODO: Change PINE_LEAVES for SAPLING
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {
