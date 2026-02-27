@@ -3,9 +3,11 @@ package net.arata.tutorialmod.item;
 import net.arata.tutorialmod.TutorialMod;
 import net.arata.tutorialmod.block.ModBlocks;
 import net.arata.tutorialmod.entity.ModEntities;
+import net.arata.tutorialmod.entity.custom.ModBoatEntity;
 import net.arata.tutorialmod.item.custom.FuelItem;
 import net.arata.tutorialmod.item.custom.MetalDetectorItem;
 import net.arata.tutorialmod.item.custom.ModArmorItem;
+import net.arata.tutorialmod.item.custom.ModBoatItem;
 import net.arata.tutorialmod.sound.ModSounds;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -73,7 +75,13 @@ public class ModItems {
     public static final RegistryObject<Item> PINE_SIGN = ITEMS.register("pine_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.PINE_SIGN.get(), ModBlocks.PINE_WALL_SIGN.get()));
     public static final RegistryObject<Item> PINE_HANGING_SIGN = ITEMS.register("pine_hanging_sign",
-            () -> new HangingSignItem(ModBlocks.PINE_HANGING_SIGN.get(), ModBlocks.PINE_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+            () -> new HangingSignItem(ModBlocks.PINE_HANGING_SIGN.get(), ModBlocks.PINE_WALL_HANGING_SIGN.get(),
+                    new Item.Properties().stacksTo(16)));
+
+    public static final RegistryObject<Item> PINE_BOAT = ITEMS.register("pine_boat",
+            () -> new ModBoatItem(false, ModBoatEntity.Type.PINE, new Item.Properties()));
+    public static final RegistryObject<Item> PINE_CHEST_BOAT = ITEMS.register("pine_chest_boat",
+            () -> new ModBoatItem(true, ModBoatEntity.Type.PINE, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

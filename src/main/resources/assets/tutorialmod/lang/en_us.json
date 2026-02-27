@@ -29,6 +29,9 @@
 
   "item.tutorialmod.rhino_spawn_egg": "Rhino Spawn Egg",
 
+  "item.tutorialmod.pine_boat": "Rhino Pine Boat",
+  "item.tutorialmod.pine_chest_boat": "Rhino Chest Pine Boat",
+
   "block.tutorialmod.sapphire_block": "Block of Sapphire",
   "block.tutorialmod.raw_sapphire_block": "Block of Raw Sapphire",
 
@@ -67,6 +70,10 @@
   "tooltip.tutorialmod.sound_block": "Makes didgeridoo sounds when right-clicked!",
 
   "entity.minecraft.villager.tutorialmod.soundmaster": "Sound Master",
+
+  "entity.tutorialmod.mod_chest_boat": "Boat with Chest",
+
+  "sounds.tutorialmod.metal_detector_found_ore": "Metal Detector Jingle",
 
   "creativetab.tutorial_tab": "Tutorial Tab"
 }
