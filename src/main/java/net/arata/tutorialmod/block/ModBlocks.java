@@ -4,6 +4,7 @@ import net.arata.tutorialmod.TutorialMod;
 import net.arata.tutorialmod.block.custom.*;
 import net.arata.tutorialmod.item.ModItems;
 import net.arata.tutorialmod.sound.ModSounds;
+import net.arata.tutorialmod.util.ModWoodTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -106,6 +107,15 @@ public class ModBlocks {
             () -> new ModFlammablePlanksBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(3.0F)));
     public static final RegistryObject<Block> PINE_LEAVES = registerBlock("pine_leaves",
             () -> new ModFlammableLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).strength(3.0F)));
+
+    public static final RegistryObject<Block> PINE_SIGN = BLOCKS.register("pine_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.PINE));
+    public static final RegistryObject<Block> PINE_WALL_SIGN = BLOCKS.register("pine_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.PINE));
+    public static final RegistryObject<Block> PINE_HANGING_SIGN = BLOCKS.register("pine_hanging_sign",
+            () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), ModWoodTypes.PINE));
+    public static final RegistryObject<Block> PINE_WALL_HANGING_SIGN = BLOCKS.register("pine_wall_hanging_sign",
+            () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ModWoodTypes.PINE));
 
     // Registra el bloque en el juego junto a su item
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

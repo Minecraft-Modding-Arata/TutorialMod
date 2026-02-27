@@ -60,6 +60,9 @@
   "block.tutorialmod.pine_planks": "Pine Planks",
   "block.tutorialmod.pine_leaves": "Pine Leaves",
 
+  "block.tutorialmod.pine_sign": "Pine Sign",
+  "block.tutorialmod.pine_hanging_sign": "Pine Hanging Sign",
+
   "tooltip.tutorialmod.metal_detector": "Finds valuables ores underground",
   "tooltip.tutorialmod.sound_block": "Makes didgeridoo sounds when right-clicked!",
 

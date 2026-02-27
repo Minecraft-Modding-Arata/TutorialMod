@@ -8,4 +8,7 @@ public class ModModelLayers {
 
     public static final ModelLayerLocation RHINO_LAYER = new  ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID, "rhino"), "main"); // Combinación de texturas o algo así
+
+    public static final ModelLayerLocation PINE_HANGING_SIGN_LAYER = new  ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID, "pine_hanging_sign"), "main");
 }
